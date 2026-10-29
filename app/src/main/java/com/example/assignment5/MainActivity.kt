@@ -22,12 +22,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SuperheroesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HeroesList(
-                        heroes = HeroesRepository.heroes,
-                        contentPadding = innerPadding
-                    )
-                }
+                SuperheroesApp()
             }
         }
     }
