@@ -12,19 +12,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.assignment5.model.HeroesRepository
 import com.example.assignment5.ui.theme.Assignment5Theme
+import com.example.assignment5.ui.theme.SuperheroesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Assignment5Theme {
+            SuperheroesTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TopicGrid(
-                        modifier = Modifier
-                            .padding(innerPadding)
-                            .padding(8.dp)
+                    HeroesList(
+                        heroes = HeroesRepository.heroes,
+                        contentPadding = innerPadding
                     )
                 }
             }
